@@ -39,6 +39,7 @@ dependencies:
   firebase_storage:
   sign_in_button: ^3.2.0
   routemaster: ^1.0.1
+  pedometer: ^4.0.1
 
 
   # The following adds the Cupertino Icons font to your application.

@@ -12,7 +12,6 @@ import '../../auth/controller/auth_controller.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
-
   @override
   ConsumerState<HomeScreen> createState() => _HomeScreenState();
 }
@@ -24,18 +23,25 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       Routemaster.of(context).push('/');
     });
   }
+
   @override
   Widget build(BuildContext context) {
+    final user = ref.read(userProvider);
     return Scaffold(
       appBar: AppBar(
         title: Text("home"),
         centerTitle: true,
       ),
-      body: MaterialButton(
-        onPressed: (){
-          logOut();
-        },
-        child: Text('logout'),
+      body: Column(
+        children: [
+          Text('Hello ${user!.name}'),
+          MaterialButton(
+            onPressed: (){
+              logOut();
+            },
+            child: Text('logout'),
+          ),
+        ],
       )
     );
   }
