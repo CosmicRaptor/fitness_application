@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_application/core/common/error_text.dart';
 import 'package:fitness_application/core/common/loader.dart';
 import 'package:fitness_application/core/router.dart';
+import 'package:fitness_application/core/widgets/steps_card.dart';
 import 'package:fitness_application/features/workouts/controller/workout_controller.dart';
 import 'package:fitness_application/features/workouts/repository/workout_backend_task.dart';
 import 'package:flutter/material.dart';
@@ -35,17 +36,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         title: Text("home"),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          Text('Hello ${user!.name} you are $status'),
-          MaterialButton(
-            onPressed: (){
-              logOut();
-            },
-            child: Text('logout'),
-          ),
-        ],
-      )
+      body: const StepsCard(),
     );
   }
 }
