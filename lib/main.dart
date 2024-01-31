@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_application/core/common/error_text.dart';
 import 'package:fitness_application/core/common/loader.dart';
+import 'package:fitness_application/core/pallet/pallet.dart';
 import 'package:fitness_application/core/router.dart';
 import 'package:fitness_application/features/auth/controller/auth_controller.dart';
 import 'package:flutter/material.dart';
@@ -43,8 +44,7 @@ class _MyAppState extends ConsumerState<MyApp> {
       data: (data) => MaterialApp.router(
         debugShowCheckedModeBanner: false,
         title: 'Fitness app',
-        //TODO: put theme here
-        //theme: ref.watch(themeNotifierProvider),
+        theme: ref.watch(themeNotifierProvider),
         routerDelegate: RoutemasterDelegate(
             routesBuilder: (context){
               if (data != null){

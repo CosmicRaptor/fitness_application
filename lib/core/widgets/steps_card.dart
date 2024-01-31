@@ -1,4 +1,6 @@
-import 'package:fitness_application/features/workouts/repository/workout_backend_task.dart';
+
+import 'package:fitness_application/core/pallet/pallet.dart';
+import 'package:fitness_application/features/home/repository/workout_backend_task.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -17,7 +19,7 @@ class StepsCard extends ConsumerWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15.0),
           ),
-          color: Colors.grey[200],
+          //color: Pallet.drawerColor,
           child: Column(
             children: [
                Padding(
