@@ -1,3 +1,7 @@
+import 'dart:developer';
+import 'dart:isolate';
+
+import 'package:android_alarm_manager_plus/android_alarm_manager_plus.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_application/core/common/error_text.dart';
 import 'package:fitness_application/core/common/loader.dart';
@@ -11,11 +15,21 @@ import 'package:routemaster/routemaster.dart';
 import 'firebase_options.dart';
 import 'models/user_model.dart';
 
+void printHello() {
+  final DateTime now = DateTime.now();
+  final int isolateId = Isolate.current.hashCode;
+  print("[$now] Hello, world! isolate=$isolateId function='$printHello'");
+}
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await AndroidAlarmManager.initialize();
+  print("hi");
   runApp(const ProviderScope(child: MyApp()));
+  //TODO: link the firebase saving function here
+  await AndroidAlarmManager.periodic(const Duration(days: 1), 0, printHello);
 }
 
 class MyApp extends ConsumerStatefulWidget {
