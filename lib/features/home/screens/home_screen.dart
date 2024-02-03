@@ -2,7 +2,6 @@ import 'package:fitness_application/core/widgets/steps_card.dart';
 import 'package:fitness_application/features/home/drawers/profile_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:routemaster/routemaster.dart';
 import '../../auth/controller/auth_controller.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
