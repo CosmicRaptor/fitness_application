@@ -1,5 +1,4 @@
 import 'dart:isolate';
-
 import 'package:android_alarm_manager_plus/android_alarm_manager_plus.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_application/core/common/error_text.dart';

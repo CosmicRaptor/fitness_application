@@ -4,6 +4,7 @@ import 'package:fitness_application/core/common/loader.dart';
 import 'package:fitness_application/features/home/repository/workout_backend_task.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:routemaster/routemaster.dart';
 
 class StepsCard extends ConsumerWidget {
   const StepsCard({super.key});
@@ -36,7 +37,7 @@ class StepsCard extends ConsumerWidget {
                         child: Align(
                           alignment: Alignment.centerRight,
                           //TODO: show the history of steps here
-                          child: IconButton(icon: const Icon(Icons.arrow_forward_ios), onPressed: (){},),
+                          child: IconButton(icon: const Icon(Icons.arrow_forward_ios), onPressed: (){Routemaster.of(context).push('/details');},),
                         ),
                       )
                     ],
@@ -84,7 +85,7 @@ class StepsCard extends ConsumerWidget {
                     Expanded(
                       child: Align(
                         alignment: Alignment.centerRight,
-                        child: IconButton(icon: const Icon(Icons.arrow_forward_ios), onPressed: (){},),
+                        child: IconButton(icon: const Icon(Icons.arrow_forward_ios), onPressed: (){Routemaster.of(context).push('/details');},),
                       ),
                     )
                   ],
